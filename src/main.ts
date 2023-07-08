@@ -42,7 +42,7 @@ async function exec(source: string, languages: string[]) {
         "markdown",
         language,
         (arg: string) => {
-          return [`${fence}${language}`, arg, fence].join("\n");
+          return [`${fence}${language}`, arg.trim(), fence].join("\n");
         },
       );
     }
