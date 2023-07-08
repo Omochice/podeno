@@ -86,7 +86,13 @@ async function getSource(
   }
 }
 
-if (import.meta.main) {
+const ExitCode = {
+  Success: 0,
+  Failure: 1,
+} as const
+type ExitCode = typeof ExitCode[keyof typeof ExitCode]
+
+async function main(): Promise<ExitCode> {
   const { options } = await new Command()
     .name("sample")
     .type("highlight", highlight)
@@ -108,7 +114,7 @@ if (import.meta.main) {
   const r = await getSource(options.stdin, options.in);
   if (r.isErr()) {
     console.error(r.error);
-    Deno.exit(1);
+    return ExitCode.Failure;
   }
 
   const rr = await exec(
@@ -118,7 +124,7 @@ if (import.meta.main) {
   );
   if (rr.isErr()) {
     console.error(rr.error);
-    Deno.exit(1);
+    return ExitCode.Failure;
   }
 
   if (options.out !== undefined) {
@@ -126,4 +132,9 @@ if (import.meta.main) {
   } else {
     console.log(rr.value);
   }
+  return ExitCode.Success;
+}
+
+if (import.meta.main) {
+  Deno.exit(await main());
 }
