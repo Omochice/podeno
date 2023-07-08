@@ -79,7 +79,11 @@ async function getSource(
   if (filename === undefined) {
     return err(new Error(`filename must be specify`));
   }
-  return ok(Deno.readTextFileSync(filename));
+  try {
+    return ok(Deno.readTextFileSync(filename));
+  } catch (e: unknown) {
+    return err(new Error(`File: ${filename} is missing`, { cause: e }));
+  }
 }
 
 if (import.meta.main) {
