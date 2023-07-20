@@ -60,6 +60,10 @@ export const command = new Command()
     if (podiumResult.isErr()) {
       throw podiumResult.error;
     }
-    console.log(podiumResult.value);
+    if (typeof opt.out === "string") {
+      Deno.writeTextFileSync(opt.out, podiumResult.value);
+    } else {
+      console.log(podiumResult.value);
+    }
     Deno.exit(ExitCode.Success);
   });
