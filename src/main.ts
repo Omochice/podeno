@@ -4,12 +4,12 @@ import { command as vimdoc } from "./subcmd/vimdoc.ts";
 import { ExitCode } from "./exitCode.ts";
 
 export async function main(): Promise<ExitCode> {
-  await new Command()
+  const { cmd } = await new Command()
     .name("podeno")
     .command("markdown", markdown)
     .command("vimdoc", vimdoc)
-    .reset()
     .parse(Deno.args);
 
+  cmd.showHelp();
   Deno.exit(1);
 }
