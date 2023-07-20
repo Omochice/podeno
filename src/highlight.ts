@@ -26,11 +26,12 @@ export const converter: Record<
   (ft: string) => (text: string) => string
 > = {
   markdown: (ft: string) => {
-    return (text: string) => [`${fence}${ft}`, text.trim(), fence].join(EOL);
+    return (text: string) =>
+      [`${fence}${ft}`, text.trim(), fence, "", ""].join(EOL);
   },
   vimdoc: (_ft: string) => {
     return (text: string) => {
-      return [`>`, indent(text.trim()), `<`].join(EOL);
+      return [`>`, indent(text.trim()), `<`, "", ""].join(EOL);
     };
   },
 };
