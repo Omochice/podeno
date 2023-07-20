@@ -6,6 +6,8 @@ import { ExitCode } from "./exitCode.ts";
 export async function main(): Promise<ExitCode> {
   const { cmd } = await new Command()
     .name("podeno")
+    .usage("<command> [flags]")
+    .description("Convert pod file to other format with highlight plugin.")
     .command("markdown", markdown)
     .command("vimdoc", vimdoc)
     .parse(Deno.args);
