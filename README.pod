@@ -14,6 +14,8 @@ $ deno run --allow-read --allow-net --allow-write https://pax.deno.dev/Omochice/
 
 This tool has below commands:
 
+=over
+
 =item * markdown
 
 =over
@@ -51,6 +53,8 @@ This tool has below commands:
 =item * C<--stdin>: Use stdin as input.
 
 =item * C<--out [path/to/file]>: Write output to C<path/to/file>. (optional)
+
+=back
 
 =back
 
