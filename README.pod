@@ -14,7 +14,7 @@ $ deno run --allow-read --allow-net --allow-write https://pax.deno.dev/Omochice/
 
 This tool has below commands:
 
-=over
+=over 0
 
 =item * markdown
 
