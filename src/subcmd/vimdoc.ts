@@ -5,6 +5,7 @@ import { execPodium } from "../lua.ts";
 import { getInput } from "../getInput.ts";
 
 export const command = new Command()
+  .description("Convert pod to vimdoc.")
   .error((err, cmd) => {
     console.error(colors.red(err.message));
     cmd.showHelp();

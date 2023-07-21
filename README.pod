@@ -1,0 +1,67 @@
+=pod
+
+=head1 Podeno
+
+Convert pod file to other format with highlight plugin.
+
+=head2 Usage
+
+If you want to convert pod to markdown named as `sample.pod`:
+
+=begin shell
+
+$ deno run --allow-read --allow-net --allow-write https://pax.deno.dev/Omochice/podeno markdown --in sample.pod
+
+=end shell
+
+This tool has below commands:
+
+=over 0
+
+=item * markdown
+
+=over
+
+=item * Convert pod text to markdown.
+
+=item * This command has some option:
+
+=over
+
+=item * C<--in [path/to/pod]>: Use C<path/to/pod> as input.
+
+=item * C<--stdin>: Use stdin as input.
+
+=item * C<--out [path/to/file]>: Write output to C<path/to/file>. (optional)
+
+=item * C<--highlight [highlight plugin name]>: Specify highlight plugin. (default: C<"hljs">)
+
+=back
+
+=back
+
+=item * vimdoc
+
+=over
+
+=item * Convert pod text to vimdoc.
+
+=item * This command has some option:
+
+=over
+
+=item * C<--in [path/to/pod]>: Use C<path/to/pod> as input.
+
+=item * C<--stdin>: Use stdin as input.
+
+=item * C<--out [path/to/file]>: Write output to C<path/to/file>. (optional)
+
+=back
+
+=back
+
+=back
+
+See C<deno run --allow-read --allow-net --allow-write https://pax.deno.dev/Omochice/podeno --help> more...
+
+=cut
