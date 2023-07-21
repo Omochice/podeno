@@ -6,6 +6,8 @@ Convert pod file to other format with highlight plugin.
 
 =head2 Usage
 
+If you want to convert pod to markdown named as `sample.pod`:
+
 =begin shell
 
 $ deno run --allow-read --allow-net --allow-write https://pax.deno.dev/Omochice/podeno markdown --in sample.pod
