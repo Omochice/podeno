@@ -2,12 +2,24 @@
 
 Convert pod file to other format with highlight plugin.
 
+## Required permissions
+
+- `--allow-net`: to fetch `podium` from [https://github.com/tani/podium](https://github.com/tani/podium).
+- `--allow-read`: to read input file.
+- `--allow-write`: to write output file.
+
+## Installation
+
+```shell
+$ deno install --allow-net --allow-read --allow-write https://pax.deno.dev/Omochice/podeno
+```
+
 ## Usage
 
 If you want to convert pod to markdown named as `sample.pod`:
 
 ```shell
-$ deno run --allow-read --allow-net --allow-write https://pax.deno.dev/Omochice/podeno markdown --in sample.pod
+$ deno run --allow-net --allow-read --allow-write https://pax.deno.dev/Omochice/podeno markdown --in sample.pod
 ```
 
 This tool has below commands:
