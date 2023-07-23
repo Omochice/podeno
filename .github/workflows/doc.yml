@@ -2,7 +2,7 @@ name: Generate README from pod
 
 on:
   push:
-    branch:
+    branches:
       - main
     paths:
       - "README.pod"

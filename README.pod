@@ -2,7 +2,9 @@
 
 =head1 Podeno
 
-Convert pod file to other format with highlight plugin.
+Convert pod file to other format by L<podium|https://github.com/tani/podium>.
+
+This support to highlight like highlight.js, shiki etc.
 
 =head2 Required permissions
 
