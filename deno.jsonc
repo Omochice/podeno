@@ -5,6 +5,6 @@
     "check": "deno check ./**/*.ts",
     "lint": "deno lint ./**/*.ts",
     "udd": "deno run --allow-read=. --allow-write=. --allow-net https://deno.land/x/udd@0.8.2/main.ts ./**/*.ts",
-    "readme": "deno run -A mod.ts markdown --in README.pod --out README.md"
+    "readme": "deno run -A cli.ts markdown --in README.pod --out README.md"
   }
 }

@@ -25,7 +25,7 @@ jobs:
           git config user.name 'GitHub'
           git config user.email 'noreply@github.com'
           git add README.md --force
-          git commit -m ":memo: Generate README.md"
+          git commit -m "docs: Generate README.md"
           git clean -fdx
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
