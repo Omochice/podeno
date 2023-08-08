@@ -12,9 +12,9 @@ This support to highlight like highlight.js, shiki etc.
 
 ## Installation
 
-```shell
-If you execute below, you can execute C<podeno>.
+If you execute below, you can execute `podeno`.
 
+```shell
 $ deno install --allow-net --allow-read --allow-write https://pax.deno.dev/Omochice/podeno/cli.ts
 ```
 
@@ -46,5 +46,5 @@ This tool has below commands:
     
 
 
-See `deno run --allow-read --allow-net --allow-write podeno --help` more...
+See `podeno --help` more...
 
