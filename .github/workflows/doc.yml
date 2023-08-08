@@ -1,0 +1,37 @@
+name: Generate README from pod
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "README.pod"
+
+jobs:
+  Run-deno-task-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Generate readme
+        run: deno task readme
+      - run: cat README.md
+      - name: Create commits
+        run: |
+          git config user.name 'GitHub'
+          git config user.email 'noreply@github.com'
+          git add README.md --force
+          git commit -m ":memo: Generate README.md"
+          git clean -fdx
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: ":robot: Update README.md"
+          body: |
+            This PR is created by [create-pull-request](https://github.com/peter-evans/create-pull-request).
+            The `README.md` is generated automaticaly.
+          author: "GitHub <noreply@github.com>"
+          delete-branch: true
