@@ -1,4 +1,13 @@
 import { err, ok, Result } from "npm:neverthrow@6.0.1-0";
+import { join } from "https://deno.land/std@0.197.0/path/mod.ts";
+
+const github = "https://raw.githubusercontent.com/";
+
+const repo = "tani/podium";
+
+const branch = "main";
+
+const path = "lua/podium.lua";
 
 /**
  * Fetch tani/podium
@@ -6,9 +15,7 @@ import { err, ok, Result } from "npm:neverthrow@6.0.1-0";
  * @return Result of fetch
  */
 export async function fetchPodium(): Promise<Result<string, Error>> {
-  const url = new URL(
-    "https://raw.githubusercontent.com/tani/podium/main/lua/podium.lua",
-  );
+  const url = new URL(join(github, repo, branch, path));
   const response = await fetch(url);
   if (!response.ok) {
     return err(new Error(response.statusText));
