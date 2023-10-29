@@ -1,4 +1,4 @@
-import { err, ok, Result } from "npm:neverthrow@6.0.1-0";
+import { err, ok, Result } from "npm:neverthrow@6.1.0";
 import { join } from "https://deno.land/std@0.204.0/path/mod.ts";
 
 const github = "https://raw.githubusercontent.com/";

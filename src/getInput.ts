@@ -1,4 +1,4 @@
-import { err, Ok, ok, Result } from "npm:neverthrow@6.0.1-0";
+import { err, Ok, ok, Result } from "npm:neverthrow@6.1.0";
 
 type Option = {
   stdin: true;
