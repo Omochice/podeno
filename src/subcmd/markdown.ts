@@ -1,5 +1,5 @@
-import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.2/command/mod.ts";
-import { colors } from "https://deno.land/x/cliffy@v1.0.0-rc.2/ansi/colors.ts";
+import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
+import { colors } from "https://deno.land/x/cliffy@v1.0.0-rc.3/ansi/colors.ts";
 import { ExitCode } from "../exitCode.ts";
 import { execPodium } from "../lua.ts";
 import { highlight } from "../highlight.ts";
