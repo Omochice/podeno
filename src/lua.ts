@@ -1,4 +1,4 @@
-import { LuaFactory } from "npm:wasmoon@1.15.0";
+import { LuaFactory } from "npm:wasmoon@1.16.0";
 import { err, ok, Result } from "npm:neverthrow@6.1.0";
 import { SupportLanguage } from "./supportLanguage.ts";
 import { converter, highlightableLanguages, Highlighter } from "./highlight.ts";
