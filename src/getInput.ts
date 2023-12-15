@@ -1,4 +1,5 @@
-import { err, Ok, ok, Result } from "npm:neverthrow@6.1.0";
+import { ResultAsync } from "npm:neverthrow@6.1.0";
+import { toError } from "./error.ts";
 
 type Option = {
   stdin: true;
@@ -10,23 +11,21 @@ type Option = {
 /**
  * Get input string from file or stdin
  */
-export async function getInput(option: Option): Promise<Result<string, Error>> {
-  return await (option.stdin ? fromStdin() : fromFile(option.in));
+export function getInput(option: Option): ResultAsync<string, Error> {
+  return (option.stdin ? fromStdin() : fromFile(option.in));
 }
 
-async function fromStdin(): Promise<Ok<string, never>> {
-  const decoder = new TextDecoder();
-  const buf: string[] = [];
-  for await (const chunk of Deno.stdin.readable) {
-    buf.push(decoder.decode(chunk));
-  }
-  return ok(buf.join(""));
+function fromStdin(): ResultAsync<string, Error> {
+  const r = new Response(Deno.stdin.readable);
+  return ResultAsync.fromPromise(
+    r.text(),
+    toError("Failed to load from stdin"),
+  );
 }
 
-async function fromFile(filename: string): Promise<Result<string, Error>> {
-  try {
-    return ok(await Deno.readTextFile(filename));
-  } catch (e: unknown) {
-    return err(new Error(`File: ${filename} is missing`, { cause: e }));
-  }
+function fromFile(filename: string): ResultAsync<string, Error> {
+  return ResultAsync.fromPromise(
+    Deno.readTextFile(filename),
+    toError(`File: ${filename} is missing`),
+  );
 }

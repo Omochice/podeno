@@ -1,5 +1,7 @@
-import { err, ok, Result } from "npm:neverthrow@6.1.0";
+import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.1.0";
 import { join } from "https://deno.land/std@0.208.0/path/mod.ts";
+import { is } from "https://deno.land/x/unknownutil@v3.10.0/mod.ts";
+import { toError } from "./error.ts";
 
 const github = "https://raw.githubusercontent.com/";
 
@@ -14,13 +16,30 @@ const path = "lua/podium.lua";
  *
  * @return Result of fetch
  */
-export async function fetchPodium(): Promise<Result<string, Error>> {
+export function fetchPodium(): ResultAsync<string, Error> {
   const url = new URL(join(github, repo, branch, path));
-  const response = await fetch(url);
-  if (!response.ok) {
-    return err(new Error(response.statusText));
-  }
-  return ok(trimShebang(await response.text()));
+  return ResultAsync.fromPromise(
+    fetch(url),
+    toError(`Failed to fetch podium from ${url.href}`),
+  )
+    .andThen((r) => r.ok ? okAsync(r) : errAsync(r))
+    .andThen((r) =>
+      ResultAsync.fromPromise(
+        r.text(),
+        toError("Failed to extract text from Response"),
+      )
+    )
+    .andThen((r: unknown) =>
+      is.String(r)
+        ? okAsync(trimShebang(r))
+        : errAsync(toError(`Extracted is not string: ${r}`)(r))
+    )
+    .orElse((r: Response | Error) => {
+      if (r instanceof Error) {
+        return errAsync(r);
+      }
+      return errAsync(toError([`${r.status}`, r.statusText].join(" "))(r));
+    });
 }
 
 function trimShebang(code: string): string {
