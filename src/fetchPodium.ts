@@ -1,5 +1,5 @@
 import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.1.0";
-import { join } from "https://deno.land/std@0.208.0/path/mod.ts";
+import { join } from "https://deno.land/std@0.209.0/path/mod.ts";
 import { is } from "https://deno.land/x/unknownutil@v3.10.0/mod.ts";
 import { toError } from "./error.ts";
 
