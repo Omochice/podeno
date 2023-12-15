@@ -33,25 +33,32 @@ export const command = new Command()
     "output filename",
   )
   .action(async (opt) => {
-    const inputResult = await getInput({
+    await getInput({
       stdin: opt.stdin,
       // @ts-ignore: ensure by command
       in: opt.in,
-    });
-    if (inputResult.isErr()) {
-      throw inputResult.error;
-    }
-    const podiumResult = await execPodium(
-      inputResult.value,
-      "vimdoc",
-    );
-    if (podiumResult.isErr()) {
-      throw podiumResult.error;
-    }
-    if (typeof opt.out === "string") {
-      Deno.writeTextFileSync(opt.out, podiumResult.value);
-    } else {
-      console.log(podiumResult.value);
-    }
-    Deno.exit(ExitCode.Success);
+    })
+      .andThen((input) =>
+        execPodium(
+          input,
+          "vimdoc",
+          {
+            // @ts-ignore: ensure by command
+            highlighter: opt.highlight,
+          },
+        )
+      )
+      .match(
+        (result) => {
+          if (typeof opt.out === "string") {
+            Deno.writeTextFileSync(opt.out, result);
+          } else {
+            console.log(result);
+          }
+          Deno.exit(ExitCode.Success);
+        },
+        (err) => {
+          throw err;
+        },
+      );
   });
