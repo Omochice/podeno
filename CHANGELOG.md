@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0-1](https://github.com/Omochice/podeno/compare/v1.0.0...v1.0.0-1) (2023-12-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency https://deno.land/std to v0.209.0 ([#40](https://github.com/Omochice/podeno/issues/40)) ([c4376c6](https://github.com/Omochice/podeno/commit/c4376c61f27fa26f97f3b43b89b91eecad92d12e))
+
 ## 1.0.0 (2023-10-01)
 
 
