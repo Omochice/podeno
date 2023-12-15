@@ -34,11 +34,11 @@ export function fetchPodium(): ResultAsync<string, Error> {
         ? okAsync(trimShebang(r))
         : errAsync(toError(`Extracted is not string: ${r}`)(r))
     )
-    .orElse((r: Response | Error) => {
+    .mapErr((r: Response | Error): Error => {
       if (r instanceof Error) {
-        return errAsync(r);
+        return r;
       }
-      return errAsync(toError([`${r.status}`, r.statusText].join(" "))(r));
+      return toError([`${r.status}`, r.statusText].join(" "))(r);
     });
 }
 
