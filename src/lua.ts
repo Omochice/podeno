@@ -24,6 +24,7 @@ export function execPodium(
       const mergedOption = { highlighter: "hljs", ...option };
       const filetypes = highlightableLanguages
         .get(mergedOption.highlighter) ?? [];
+      // NOTE: use try-catch-finally because of need to use `finally`
       try {
         const pod = lua.doStringSync(code);
         for (const ft of filetypes) {
