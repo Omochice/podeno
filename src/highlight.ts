@@ -29,9 +29,9 @@ export const converter: Record<
     return (text: string) =>
       [`${fence}${ft}`, text.trim(), fence, "", ""].join(EOL);
   },
-  vimdoc: (_ft: string) => {
+  vimdoc: (ft: string) => {
     return (text: string) => {
-      return [`>`, indent(text.trim()), `<`, "", ""].join(EOL);
+      return [`>${ft}`, indent(text.trim()), `<`, "", ""].join(EOL);
     };
   },
 };
