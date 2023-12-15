@@ -1,5 +1,5 @@
 import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.1.0";
-import { join } from "https://deno.land/std@0.209.0/path/mod.ts";
+import { join } from "https://deno.land/std@0.209.0/url/join.ts";
 import { is } from "https://deno.land/x/unknownutil@v3.11.0/mod.ts";
 import { toError } from "./error.ts";
 
@@ -17,7 +17,7 @@ const path = "lua/podium.lua";
  * @return Result of fetch
  */
 export function fetchPodium(): ResultAsync<string, Error> {
-  const url = new URL(join(github, repo, branch, path));
+  const url = join(github, repo, branch, path);
   return ResultAsync.fromPromise(
     fetch(url),
     toError(`Failed to fetch podium from ${url.href}`),
