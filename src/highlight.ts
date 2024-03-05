@@ -1,6 +1,6 @@
 import { EnumType } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
 import hljs from "npm:highlight.js@11.9.0";
-import shiki from "npm:shiki@0.14.6";
+import shiki from "npm:shiki@0.14.7";
 import { SupportLanguage } from "./supportLanguage.ts";
 import { EOL, indent } from "./indent.ts";
 
