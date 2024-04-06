@@ -1,6 +1,6 @@
 import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.1.0";
 import { join } from "https://deno.land/std@0.209.0/url/join.ts";
-import { is } from "https://deno.land/x/unknownutil@v3.17.0/mod.ts";
+import { is } from "https://deno.land/x/unknownutil@v3.17.2/mod.ts";
 import { toError } from "./error.ts";
 
 const github = "https://raw.githubusercontent.com/";
