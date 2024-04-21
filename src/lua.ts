@@ -1,5 +1,5 @@
 import { LuaFactory } from "npm:wasmoon@1.16.0";
-import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.1.0";
+import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.2.0";
 import { SupportLanguage } from "./supportLanguage.ts";
 import { converter, highlightableLanguages, Highlighter } from "./highlight.ts";
 import { fetchPodium } from "./fetchPodium.ts";
