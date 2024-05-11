@@ -1,6 +1,6 @@
 import { EnumType } from "https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts";
 import hljs from "npm:highlight.js@11.9.0";
-import shiki from "npm:shiki@0.14.7";
+import { bundledLanguagesInfo } from "npm:shiki@1.5.1/bundle/full";
 import { SupportLanguage } from "./supportLanguage.ts";
 import { EOL, indent } from "./indent.ts";
 
@@ -8,7 +8,7 @@ export const highlightableLanguages = new Map([
   ["hljs", hljs.listLanguages()],
   [
     "shiki",
-    shiki.BUNDLED_LANGUAGES
+    bundledLanguagesInfo
       .map((l) => [l.id, l.aliases ?? []])
       .flat(2),
   ],
