@@ -12,11 +12,11 @@ jobs:
   Run-deno-task-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: denoland/setup-deno@v1
+      - uses: denoland/setup-deno@041b854f97b325bd60e53e9dc2de9cb9f9ac0cba # v1.1.4
         with:
           deno-version: vx.x.x
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Generate readme
         run: deno task readme
       - run: cat README.md
@@ -28,7 +28,7 @@ jobs:
           git commit -m "docs: Generate README.md"
           git clean -fdx
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@6d6857d36972b65feb161a90e484f2984215f83e # v6.0.5
         with:
           title: ":robot: Update README.md"
           body: |
