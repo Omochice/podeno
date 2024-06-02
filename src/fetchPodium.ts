@@ -1,4 +1,4 @@
-import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.2.1";
+import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@6.2.2";
 import { join } from "jsr:@std/url@0.224.0/join";
 import { is } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
 import { toError } from "./error.ts";
