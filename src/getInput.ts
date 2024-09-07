@@ -1,4 +1,4 @@
-import { ResultAsync } from "npm:neverthrow@6.2.2";
+import { ResultAsync } from "npm:neverthrow@7.2.0";
 import { toError } from "./error.ts";
 
 type Option = {
