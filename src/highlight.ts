@@ -1,5 +1,5 @@
 import { EnumType } from "https://deno.land/x/cliffy@v1.0.0-rc.7/command/mod.ts";
-import hljs from "npm:highlight.js@11.11.0";
+import hljs from "npm:highlight.js@11.11.1";
 import { bundledLanguagesInfo } from "npm:shiki@1.24.4/bundle/full";
 import { SupportLanguage } from "./supportLanguage.ts";
 import { EOL, indent } from "./indent.ts";
