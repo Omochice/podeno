@@ -4,7 +4,7 @@
     "fmt:check": "deno fmt --check ./**/*.ts",
     "check": "deno check ./**/*.ts",
     "lint": "deno lint ./**/*.ts",
-    "readme": "deno run -A cli.ts markdown --in README.pod --out README.md"
+    "readme": "deno run --allow-net --allow-read --allow-write --allow-env=VSCODE_TEXTMATE_DEBUG cli.ts markdown --in README.pod --out README.md"
   },
   "lock": false,
   "fmt": {

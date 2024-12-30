@@ -9,13 +9,14 @@ This support to highlight like highlight.js, shiki etc.
 - `--allow-net`: to fetch `podium` from [https://github.com/tani/podium](https://github.com/tani/podium).
 - `--allow-read`: to read input file.
 - `--allow-write`: to write output file.
+- `--allow-env`: to read `VSCODE_TEXTMATE_DEBUG`.
 
 ## Installation
 
 If you execute below, you can execute `podeno`.
 
 ```shell
-$ deno install --allow-net --allow-read --allow-write https://pax.deno.dev/Omochice/podeno/cli.ts
+$ deno install --global --allow-net --allow-read --allow-write --allow-env=VSCODE_TEXTMATE_DEBUG https://pax.deno.dev/Omochice/podeno/cli.ts
 ```
 
 ## Usage
