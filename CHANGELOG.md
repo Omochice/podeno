@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Omochice/podeno/compare/v1.0.0-1...v2.0.0) (2024-12-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate deno v2
+
+### Features
+
+* migrate deno v2 ([0fe698d](https://github.com/Omochice/podeno/commit/0fe698da4bcd2b730b87e6d9ac1d7a607cf78515))
+
 ## [1.0.0-1](https://github.com/Omochice/podeno/compare/v1.0.0...v1.0.0-1) (2023-12-15)
 
 
