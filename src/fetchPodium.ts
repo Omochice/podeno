@@ -1,4 +1,4 @@
-import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@8.1.1";
+import { errAsync, okAsync, ResultAsync } from "npm:neverthrow@8.2.0";
 import { join } from "jsr:@std/url@0.225.1/join";
 import { is } from "jsr:@core/unknownutil@4.3.0";
 import { toError } from "./error.ts";
