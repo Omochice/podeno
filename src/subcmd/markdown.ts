@@ -1,5 +1,5 @@
 import { Command } from "jsr:@cliffy/command@1.0.0-rc.7";
-import { colors } from "jsr:@cliffy/ansi@1.0.0-rc.7/colors";
+import { colors } from "jsr:@cliffy/ansi@1.0.0-rc.8/colors";
 import { ExitCode } from "../exitCode.ts";
 import { execPodium } from "../lua.ts";
 import { highlight } from "../highlight.ts";
