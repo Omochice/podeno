@@ -1,6 +1,6 @@
 import { EnumType } from "jsr:@cliffy/command@1.0.0-rc.8";
 import hljs from "npm:highlight.js@11.11.1";
-import { bundledLanguagesInfo } from "npm:shiki@2.5.0/bundle/full";
+import { bundledLanguagesInfo } from "npm:shiki@3.8.1/bundle/full";
 import { SupportLanguage } from "./supportLanguage.ts";
 import { EOL, indent } from "./indent.ts";
 
