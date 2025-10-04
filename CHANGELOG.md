@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.0.0 (2025-10-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate deno v2
+
+### Features
+
+* migrate deno v2 ([0fe698d](https://github.com/Omochice/podeno/commit/0fe698da4bcd2b730b87e6d9ac1d7a607cf78515))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency https://deno.land/std to v0.209.0 ([#40](https://github.com/Omochice/podeno/issues/40)) ([c4376c6](https://github.com/Omochice/podeno/commit/c4376c61f27fa26f97f3b43b89b91eecad92d12e))
+
 ## [2.0.0](https://github.com/Omochice/podeno/compare/v1.0.0-1...v2.0.0) (2024-12-30)
 
 
