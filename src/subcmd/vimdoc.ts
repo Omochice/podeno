@@ -1,4 +1,4 @@
-import { Command } from "jsr:@cliffy/command@1.0.0-rc.8";
+import { Command } from "jsr:@cliffy/command@1.0.0";
 import { colors } from "jsr:@cliffy/ansi@1.0.0/colors";
 import { ExitCode } from "../exitCode.ts";
 import { execPodium } from "../lua.ts";
