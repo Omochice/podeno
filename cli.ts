@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run --allow-read --allow-net --allow-write
 
-import { Command } from "jsr:@cliffy/command@1.1.1";
+import { Command } from "jsr:@cliffy/command@1.2.1";
 import { command as markdown } from "./src/subcmd/markdown.ts";
 import { command as vimdoc } from "./src/subcmd/vimdoc.ts";
 import { ExitCode } from "./src/exitCode.ts";
