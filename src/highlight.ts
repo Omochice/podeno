@@ -1,4 +1,4 @@
-import { EnumType } from "jsr:@cliffy/command@1.2.1";
+import { EnumType } from "jsr:@cliffy/command@1.3.1";
 import hljs from "npm:highlight.js@11.12.0";
 import { bundledLanguagesInfo } from "npm:shiki@2.5.0/bundle/full";
 import { SupportLanguage } from "./supportLanguage.ts";
